@@ -1,0 +1,30 @@
+name: CI
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Build routeros on docker
+        run: docker-compose up -d
+
+      - name: Check running containers
+        run: docker ps -a
+
+      - name: Sleep for 30 seconds
+        run: sleep 30s
+        shell: bash
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+          cache: "yarn"
+
+      - name: Install dependencies
+        run: yarn --frozen-lockfile
+
+      - name: Run test
+        run: yarn test

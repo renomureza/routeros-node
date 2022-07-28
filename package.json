@@ -1,0 +1,39 @@
+{
+  "name": "routeros-node",
+  "version": "0.1.0",
+  "description": "Routeros API for Node.js",
+  "license": "MIT",
+  "keywords": [
+    "outeros",
+    "mikrotik-hotspot",
+    "routeros-api",
+    "mikrotik-routeros-api",
+    "mikrotik-api",
+    "mikrotik-routeros-script",
+    "routeros-node",
+    "routeros-wrapper",
+    "routeros-scripts",
+    "mikrotik",
+    "routeros-client"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/example/index.ts",
+    "test": "jest",
+    "test:watch": "jest --watch --verbose ",
+    "build": "rimraf ./dist && tsc --sourceMap"
+  },
+  "devDependencies": {
+    "@types/jest": "^28.1.6",
+    "@types/node": "^18.6.1",
+    "jest": "^28.1.3",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.7",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.4"
+  }
+}
